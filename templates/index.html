@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Photography Landing Page</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-  <header>
-    <h1>Photography</h1>
-  </header>
-  
+
+  {% extends "base.html" %}
+  {% load static %}
+  {% block title %}Home{% endblock title %}
+  {% block head %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  {% endblock head %}
+  {% block content %}
   <section class="album">
     <div class="container">
       <h2>Album</h2>
@@ -65,6 +62,4 @@
     </div>
   </section>
 
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+  {% endblock content %}
