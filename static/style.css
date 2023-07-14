@@ -1,4 +1,23 @@
-    /* Additional custom styles */
+   body{
+    background-color: #000000;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+   }
+
+   #backback{
+    background: url("cam4.jpg");
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   
+   
+   /* Additional custom styles */
     .album {
       background-color: #f9f9f9;
       padding: 50px;
