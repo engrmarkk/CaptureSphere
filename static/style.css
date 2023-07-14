@@ -16,6 +16,9 @@
     align-items: center;
    }
    
+  .space {
+    letter-spacing: 20px !important;
+   }
    
    /* Additional custom styles */
     .album {
@@ -35,3 +38,6 @@
       padding: 50px;
       text-align: center;
     }
+h1{
+  color: yellow;
+}
