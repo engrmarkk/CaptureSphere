@@ -36,7 +36,7 @@
     <!-- Block to be inherited from this file by other files if need be -->
     {% block head %}{% endblock head %}
     <!-- Css link -->
-    <link rel="stylesheet" href="{% static '/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
     <!-- Title , the block to be inherited by other files so as to add a title for each page-->
     <title>Whatsapp Check {% block title %}{% endblock title %}</title>
   </head>
@@ -44,7 +44,7 @@
   <body>
     <div id="top"></div>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-2" id="nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2" id="nav">
       <div class="container">
         <!-- The navbar brand -->
         <a href="/" class="navbar-brand fw-bold">AyStar</a>
