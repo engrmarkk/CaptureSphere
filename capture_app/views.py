@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django_form import ContactForm
+from .django_form import ContactForm
 
 
 def index(request):
