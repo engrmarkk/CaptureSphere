@@ -72,19 +72,19 @@
             <br>
             <button type="submit" class="btn btn-primary">Send</button>
           </form> -->
-        <form method="post" class="form-group">
+        <form method="post" class="form-group bg-secondary p-5 rounded">
           {% csrf_token %}
           <!-- Use the Bootstrap classes to style the formF -->
           <div class="mb-3">
-            {{ form.name.label_tag }}
+            <!-- {{ form.name.label_tag }} -->
             {{ form.name|add_class:'form-control' }}
           </div>
           <div class="mb-3">
-            {{ form.email.label_tag }}
+            <!-- {{ form.email.label_tag }} -->
             {{ form.email|add_class:'form-control' }}
           </div>
           <div class="mb-3">
-            {{ form.message.label_tag }}
+            <!-- {{ form.message.label_tag }} -->
             {{ form.message|add_class:'form-control' }}
           </div>
           <input type="submit" class="btn btn-primary" value="Submit">
