@@ -1,63 +1,63 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock head %}
+{% block content %}
+<section class="" id="backback">
+  <div class="text-light">
+    <h1 class=" mt-4" style="font-size: 3.5rem;">TopNotch Images</h1>
+    <p class="mt-4" style="letter-spacing: 3px; font-size: .8rem;">CAPTURE YOUR MOMENTS AND TURN IT TO MEMORIES.</p>
+    <div class="mt-4">
+      <a href="#" class="btn btn-primary" style="cursor: pointer;" id='startedbtn'>Get Started</a>
+    </div>
+  </div>
+</section>
 
-  {% extends "base.html" %}
-  {% load static %}
-  {% block title %}Home{% endblock title %}
-  {% block head %}
-  <link rel="stylesheet" href="{% static 'style.css' %}">
-  {% endblock head %}
-  {% block content %}
-  <section class="" id="backback" >
-    <div class="text-light">
-      <h1 class=" mt-4" style="font-size: 3.5rem;">TopNotch Images</h1>
-      <p class="mt-4" style="letter-spacing: 3px; font-size: .8rem;">CAPTURE YOUR MOMENTS AND TURN IT TO MEMORIES.</p>
-      <div class="mt-4">
-        <a href="#" class="btn btn-primary" style="cursor: pointer;" id='startedbtn'>Get Started</a>
+
+
+<section class="album">
+  <div class="container">
+    <h2>Album</h2>
+    <div class="row">
+      <!-- Add your photo thumbnails here -->
+      <div class="col-md-4">
+        <img src="{% static 'photo1.jpg' %}" alt="Photo 1" class="img-fluid">
+      </div>
+      <div class="col-md-4">
+        <img src="{% static 'photo2.jpg' %}" alt="Photo 2" class="img-fluid">
+      </div>
+      <div class="col-md-4">
+        <img src="{% static 'photo3.jpg' %}" alt="Photo 3" class="img-fluid">
+      </div>
+      <div class="col-md-4">
+        <img src="{% static 'photo4.jpg' %}" alt="Photo 4" class="img-fluid">
+      </div>
+      <div class="col-md-4">
+        <img src="{% static 'photo5.jpg' %}" alt="Photo 5" class="img-fluid">
+      </div>
+      <div class="col-md-4">
+        <img src="{% static 'photo6.webp' %}" alt="Photo 6" class="img-fluid">
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
+<section class="promo">
+  <div class="container">
+    <h2>Promo</h2>
+    <p>Add your promotional content here.</p>
+  </div>
+</section>
 
-
-  <section class="album">
-    <div class="container">
-      <h2>Album</h2>
-      <div class="row">
-        <!-- Add your photo thumbnails here -->
-        <div class="col-md-4">
-          <img src="{% static 'photo1.jpg' %}" alt="Photo 1" class="img-fluid">
-        </div>
-        <div class="col-md-4">
-          <img src="{% static 'photo2.jpg' %}" alt="Photo 2" class="img-fluid">
-        </div>
-        <div class="col-md-4">
-          <img src="{% static 'photo3.jpg' %}" alt="Photo 3" class="img-fluid">
-        </div>
-        <div class="col-md-4">
-          <img src="{% static 'photo4.jpg' %}" alt="Photo 4" class="img-fluid">
-        </div>
-        <div class="col-md-4">
-          <img src="{% static 'photo5.jpg' %}" alt="Photo 5" class="img-fluid">
-        </div>
-        <div class="col-md-4">
-          <img src="{% static 'photo6.webp' %}" alt="Photo 6" class="img-fluid">
-        </div>
-       </div>
-    </div>
-  </section>
-  
-  <section class="promo">
-    <div class="container">
-      <h2>Promo</h2>
-      <p>Add your promotional content here.</p>
-    </div>
-  </section>
-  
-  <section class="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <form>
+<section class="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <!-- <form>
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Name" required>
             </div>
@@ -71,10 +71,29 @@
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Send</button>
-          </form>
-        </div>
+          </form> -->
+        <form method="post" class="form-group">
+          {% csrf_token %}
+          <!-- Use the Bootstrap classes to style the formF -->
+          <div class="mb-3">
+            {{ form.name.label_tag }}
+            {{ form.name|add_class:'form-control' }}
+          </div>
+          <div class="mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email|add_class:'form-control' }}
+          </div>
+          <div class="mb-3">
+            {{ form.message.label_tag }}
+            {{ form.message|add_class:'form-control' }}
+          </div>
+          <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  {% endblock content %}
+{% endblock content %}
