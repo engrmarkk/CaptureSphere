@@ -54,7 +54,7 @@
 
 <section class="contact">
   <div class="container">
-    <h2>Contact</h2>
+    <h2 class="mb-4">Contact</h2>
     <div class="row justify-content-center">
       <div class="col-md-6">
         <!-- <form>
@@ -72,22 +72,30 @@
             <br>
             <button type="submit" class="btn btn-primary">Send</button>
           </form> -->
-        <form method="post" class="form-group bg-secondary p-5 rounded">
+        <form method="post" class="form-group p-5 rounded" style="
+        background: linear-gradient(
+    135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+        ">
           {% csrf_token %}
           <!-- Use the Bootstrap classes to style the formF -->
           <div class="mb-3">
             <!-- {{ form.name.label_tag }} -->
             {{ form.name|add_class:'form-control' }}
-          </div>
-          <div class="mb-3">
-            <!-- {{ form.email.label_tag }} -->
-            {{ form.email|add_class:'form-control' }}
-          </div>
-          <div class="mb-3">
-            <!-- {{ form.message.label_tag }} -->
-            {{ form.message|add_class:'form-control' }}
-          </div>
-          <input type="submit" class="btn btn-primary" value="Submit">
+            </div>
+            <div class="mb-3">
+              <!-- {{ form.email.label_tag }} -->
+              {{ form.email|add_class:'form-control' }}
+            </div>
+            <div class="mb-3">
+              <!-- {{ form.message.label_tag }} -->
+              {{ form.message|add_class:'form-control' }}
+            </div>
+            <input type="submit" class="btn btn-primary" value="Submit">
         </form>
 
 
